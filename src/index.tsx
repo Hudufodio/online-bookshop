@@ -3,15 +3,17 @@ import ReactDOM from "react-dom/client";
 
 import Header from "./components/header";
 import Card from "./components/card";
-import Hero from "./components/modal";
+import Modal from "./components/modal";
+import Hero from "./components/hero";
 
 const Main = () => {
   return (
     <>
       <Header />
-        <Hero />
-        <Card />
-      </>
+      <Hero />
+      <Card />
+      <Modal />
+    </>
   );
 };
 

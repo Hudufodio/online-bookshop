@@ -31,7 +31,7 @@ const Hero = () => {
               onKeyUp={searchBook}
             />
             <button>
-              <i className="fas fa-search"></i>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
           <img src="./images/bookbck.jpg" alt="" />
