@@ -5,7 +5,7 @@ An online bookstore built using rest API, should be responsive, user-friendly an
 # stacks to use
 javascript/typescript
 ajax
-css/tailwind
-google API
+scss
+google book API
 
 

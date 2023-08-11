@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { Header, Hero, Card, Modal } from './components';
+import { Main } from './components';
 
-const Main = () => {
+const Hero = () => {
 	return (
-		<main>
-			<Header />
-			<Hero />
-			<Card />
-			<Modal />
-		</main>
+		<>
+			<Main />
+		</>
 	);
 };
 
@@ -19,7 +16,7 @@ if (div) {
 	const root = ReactDOM.createRoot(div);
 	root.render(
 		<React.StrictMode>
-			<Main />
+			<Hero />
 		</React.StrictMode>
 	);
 }
