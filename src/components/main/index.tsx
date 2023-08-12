@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import './style.scss';
 
 const Main = () => {
 	const [search, setSearch] = useState('');
@@ -14,8 +15,7 @@ const Main = () => {
 			<div className="header">
 				<div className="row1">
 					<h1>
-						Read a book to braoden <br />
-						your choice of words and decision making.
+						Read a book to broaden your choice <br /> of words and decision making.
 					</h1>
 				</div>
 				<div className="row2">
@@ -32,7 +32,7 @@ const Main = () => {
 							<i className="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
-					<img src="./images/bookbck.jpg" alt="" />
+					<img src="./images/bookbck.jpg" alt="" className="image" />
 				</div>
 			</div>
 		</>
