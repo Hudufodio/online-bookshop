@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Card from '../card';
 import './style.scss';
 
 const Main = () => {
@@ -23,6 +24,7 @@ const Main = () => {
 					<div className="search">
 						<input
 							type="text"
+							className="input"
 							placeholder="Enter Your Book Name"
 							value={search}
 							onChange={(event) => setSearch(event.target.value)}
@@ -34,6 +36,9 @@ const Main = () => {
 					</div>
 					<img src="./images/bookbck.jpg" alt="" className="image" />
 				</div>
+			</div>
+			<div className="container">
+				<Card />
 			</div>
 		</>
 	);
