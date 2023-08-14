@@ -1,13 +1,24 @@
 import { useState } from 'react';
 import Card from '../card';
 import './style.scss';
+import axios from 'axios';
+// import axios from 'axios';
 
 const Main = () => {
 	const [search, setSearch] = useState('');
+	const [bookData, setData] = useState([]);
 
 	const searchBook = (event: any) => {
 		if (event.key === 'Enter') {
-			//googleapi key will go here
+			axios
+				.get(
+					'https://www.googleapis.com/books/v1/volumes?q=' +
+						search +
+						'&key=AIzaSyAbhasWbgXFuddygjO-HPwUkTa0yRjftwM' +
+						'&maxResults=40'
+				)
+				.then((res) => setData(res.data.items))
+				.catch((err) => console.log(err));
 		}
 	};
 
@@ -37,15 +48,7 @@ const Main = () => {
 					<img src="./images/bookbck.jpg" alt="" className="image" />
 				</div>
 			</div>
-			<div className="container">
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-			</div>
+			<div className="container">{<Card book={bookData} />}</div>
 		</>
 	);
 };
