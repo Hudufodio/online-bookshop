@@ -16,12 +16,14 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		//didn't work
 		background: linear-gradient(
 			rgba(0, 0, 0, 0.5),
 			rgba(0, 0, 0, 0.5),
-			url(../../../public/images/book3.jpg)
+			url('../../../public/images/bookbck.jpg')
 		);
 		clip-path: circle(60% at left 300px);
+		z-index: -1;
 	}
 
 	.row1 {
@@ -45,10 +47,44 @@
 			margin-bottom: 15px;
 		}
 
+		.search {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.input {
+				outline: 0;
+				border: 0;
+				width: 350px;
+				height: 35px;
+				padding: 0, 0.5rem;
+				font-size: 15px;
+				font-weight: bold;
+			}
+
+			button {
+				outline: none;
+				border: none;
+				height: 35px;
+				width: 30px;
+				padding: 0, 0.5rem;
+			}
+		}
+
 		.image {
 			margin-top: 30px;
 			width: 250px;
 			height: auto;
 		}
 	}
+}
+
+.container {
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 25px;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(200px, 0.5fr));
+	grid-gap: 20px;
+	box-sizing: border-box;
 }
