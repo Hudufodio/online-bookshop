@@ -12,6 +12,7 @@ const Card = ({ book }: any) => {
 			{book.map((item: any) => {
 				const thumbnail: any =
 					item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+				const amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
 
 				return (
 					<>
@@ -19,7 +20,7 @@ const Card = ({ book }: any) => {
 							<img src={thumbnail} alt="" />
 							<div className="bottom">
 								<h3 className="title">React Js</h3>
-								<p className="amount">&#36; 15.00</p>
+								<p className="amount">&#36;{amount}</p>
 							</div>
 						</div>
 					</>
