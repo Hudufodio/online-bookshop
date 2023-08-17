@@ -12,18 +12,20 @@ const Card = ({ book }: any) => {
 			{book.map((item: any) => {
 				const thumbnail: any =
 					item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-
-				return (
-					<>
-						<div className="card">
-							<img src={thumbnail} alt="" />
-							<div className="bottom">
-								<h3 className="title">React Js</h3>
-								<p className="amount">&#36; 15.00</p>
+				const amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
+				if (thumbnail != undefined && amount != undefined) {
+					return (
+						<>
+							<div className="card">
+								<img src={thumbnail} alt="" />
+								<div className="bottom">
+									<h3 className="title">{item.volumeInfo.title}</h3>
+									<p className="amount">&#36;{amount}</p>
+								</div>
 							</div>
-						</div>
-					</>
-				);
+						</>
+					);
+				}
 			})}
 		</>
 	);
