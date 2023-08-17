@@ -13,7 +13,7 @@ const Card = ({ book }: any) => {
 				const thumbnail: any =
 					item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
 				const amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-        
+
 				if (thumbnail != undefined && amount != undefined) {
 					return (
 						<>
@@ -23,6 +23,7 @@ const Card = ({ book }: any) => {
 									<h3 className="title">{item.volumeInfo.title}</h3>
 									<p className="amount">&#36;{amount}</p>
 								</div>
+							</div>
 						</>
 					);
 				}
