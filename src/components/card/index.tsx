@@ -13,18 +13,19 @@ const Card = ({ book }: any) => {
 				const thumbnail: any =
 					item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
 				const amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-
-				return (
-					<>
-						<div className="card">
-							<img src={thumbnail} alt="" />
-							<div className="bottom">
-								<h3 className="title">React Js</h3>
-								<p className="amount">&#36;{amount}</p>
-							</div>
-						</div>
-					</>
-				);
+        
+				if (thumbnail != undefined && amount != undefined) {
+					return (
+						<>
+							<div className="card">
+								<img src={thumbnail} alt="" />
+								<div className="bottom">
+									<h3 className="title">{item.volumeInfo.title}</h3>
+									<p className="amount">&#36;{amount}</p>
+								</div>
+						</>
+					);
+				}
 			})}
 		</>
 	);
