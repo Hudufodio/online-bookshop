@@ -1,4 +1,5 @@
 import './style.scss';
+import book1 from '../images/book1.jpeg';
 
 const Modal = () => {
 	return (
@@ -9,10 +10,10 @@ const Modal = () => {
 						<i className="fa-solid fa-xmark"></i>
 					</button>
 					<div className="inner-box">
+						<img src={book1} alt="book cover" />
 						<div className="info">
 							<h1>Build modern web applications with React and Typescript</h1>
 							<h3>H.Fodio</h3>
-							<br />
 							<h4>
 								XX Publish Ltd <span>2023</span>
 							</h4>
@@ -22,7 +23,7 @@ const Modal = () => {
 							</a>
 						</div>
 					</div>
-					<h4 className="description">Read and Learn any kind of book you desire. </h4>
+					<h4 className="description">Read any book online and Learn a new skill.</h4>
 				</div>
 			</div>
 		</>

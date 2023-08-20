@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Card from '../card';
 import './style.scss';
+import bookbck from '../images/bookbck.jpg';
 import axios from 'axios';
 // import axios from 'axios';
 
@@ -45,7 +46,7 @@ const Main = () => {
 							<i className="fa-solid fa-magnifying-glass"></i>
 						</button>
 					</div>
-					<img src="./images/bookbck.jpg" alt="" className="image" />
+					<img src={bookbck} alt="" className="image" />
 				</div>
 			</div>
 			<div className="container">{<Card book={bookData} />}</div>

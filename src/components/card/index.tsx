@@ -1,4 +1,5 @@
 import './style.scss';
+import Modal from '../modal';
 
 type Card = {
 	book: any;
@@ -24,6 +25,7 @@ const Card = ({ book }: any) => {
 									<p className="amount">&#36;{amount}</p>
 								</div>
 							</div>
+							<Modal />
 						</>
 					);
 				}
