@@ -1,29 +1,34 @@
 import './style.scss';
-import book1 from '../images/book1.jpeg';
 
-const Modal = () => {
+const Modal = ({ show, item, onClose }: any) => {
+	if (!show) {
+		return null;
+	}
+
+	const thumbnail: any = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
 	return (
 		<>
 			<div className="overlay">
 				<div className="overlay-inner">
-					<button className="close">
+					<button className="close" onClick={onClose}>
 						<i className="fa-solid fa-xmark"></i>
 					</button>
 					<div className="inner-box">
-						<img src={book1} alt="book cover" />
+						<img src={thumbnail} alt="book cover" />
 						<div className="info">
-							<h1>Build modern web applications with React and Typescript</h1>
-							<h3>H.Fodio</h3>
+							<h1>{item.volumeInfo.title}</h1>
+							<h3>{item.volumeInfo.authors}</h3>
 							<h4>
-								XX Publish Ltd <span>2023</span>
+								{item.volumeInfo.publisher}
+								<span>{item.volumeInfo.publishedDate}</span>
 							</h4>
 							<br />
-							<a href="#">
+							<a href={item.volumeInfo.previewLink}>
 								<button>More</button>
 							</a>
 						</div>
 					</div>
-					<h4 className="description">Read any book online and Learn a new skill.</h4>
+					<h4 className="description">{item.volumeInfo.description}</h4>
 				</div>
 			</div>
 		</>

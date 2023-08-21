@@ -1,5 +1,6 @@
 import './style.scss';
 import Modal from '../modal';
+import { useState } from 'react';
 
 type Card = {
 	book: any;
@@ -8,6 +9,8 @@ type Card = {
 
 const Card = ({ book }: any) => {
 	console.log(book);
+	const [show, setShow] = useState(false);
+	const [bookItem, setItem] = useState();
 	return (
 		<>
 			{book.map((item: any) => {
@@ -18,14 +21,20 @@ const Card = ({ book }: any) => {
 				if (thumbnail != undefined && amount != undefined) {
 					return (
 						<>
-							<div className="card">
+							<div
+								className="card"
+								onClick={() => {
+									setShow(true);
+									setItem(item);
+								}}
+							>
 								<img src={thumbnail} alt="" />
 								<div className="bottom">
 									<h3 className="title">{item.volumeInfo.title}</h3>
-									<p className="amount">&#36;{amount}</p>
+									<p className="amount">&#x20AC;{amount}</p>
 								</div>
 							</div>
-							<Modal />
+							<Modal show={show} item={bookItem} onClose={() => setShow(false)} />
 						</>
 					);
 				}
