@@ -3,11 +3,11 @@ import Card from '../card';
 import './style.scss';
 import bookbck from '../images/bookbck.jpg';
 import axios from 'axios';
-// import axios from 'axios';
 
 const Main = () => {
 	const [search, setSearch] = useState('');
 	const [bookData, setData] = useState([]);
+	console.log(bookData);
 
 	const searchBook = (event: any) => {
 		if (event.key === 'Enter') {
