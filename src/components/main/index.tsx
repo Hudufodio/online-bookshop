@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from '../card';
 import './style.scss';
 import bookbck from '../images/bookbck.jpg';
@@ -23,12 +23,18 @@ const Main = () => {
 		}
 	};
 
+	useEffect(() => {
+		searchBook((event: any) => event.data.items.length > 0);
+	}, []);
+
 	return (
 		<>
 			<div className="header">
 				<div className="row1">
 					<h1>
-						Read a book to broaden your choice <br /> of words and decision making.
+						Read a book to broaden your <br />
+						Choice of words, Decision making
+						<br /> or Learn a new skill.
 					</h1>
 				</div>
 				<div className="row2">
