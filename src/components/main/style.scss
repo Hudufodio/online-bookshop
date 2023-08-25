@@ -18,9 +18,16 @@
 			font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 			@include screen_medium {
+				display: block;
+				font-size: 2em;
 				font-size: 2em;
 				text-align: start;
 				margin-left: 18px;
+			}
+
+			@include tablet {
+				display: table-caption;
+				font-size: 1.5em;
 			}
 		}
 	}
@@ -70,6 +77,10 @@
 
 			@include screen_medium {
 				margin-left: 6.5em;
+			}
+
+			@include tablet {
+				margin-left: 0;
 			}
 		}
 	}
