@@ -16,7 +16,7 @@ typescript
 scss
 
 # screenshot
-![online bookshop]()
+![online bookshop](src/components/images/bookshop.png)
 
 # installation
 open/clone project
